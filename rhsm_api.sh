@@ -31,6 +31,10 @@ sync_data()
     exit 1
   fi
 
+  initial_run=$(curl -s -H "$($TOKEN)" $URL?limit=1\&offset=0)
+  echo "First touch ... waiting 2 minutes"
+  sleep 120
+
   cont=0
 
   while true
